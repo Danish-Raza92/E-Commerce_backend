@@ -11,10 +11,11 @@ const app = express();
 
 // ─── CORS — Allow Vercel frontend ───────────────────────
 const allowedOrigins = [
-  process.env.FRONTEND_URL,          // e.g. https://danii-store.vercel.app
+  'https://e-commerce-frontend-theta-orpin.vercel.app',
+  process.env.FRONTEND_URL,
   'http://localhost:3000',
   'http://localhost:5000',
-  'http://127.0.0.1:5500',           // Live Server (VS Code)
+  'http://127.0.0.1:5500',
 ].filter(Boolean);
 
 app.use(cors({
@@ -58,7 +59,7 @@ app.use((err, req, res, next) => {
 });
 
 // ─── Start ───────────────────────────────────────────────
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`\n🚀 Danii.Store Backend on port ${PORT}`);
   console.log(`📦 Env: ${process.env.NODE_ENV || 'development'}`);
