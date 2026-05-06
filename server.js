@@ -17,8 +17,10 @@ app.use(express.json());
 app.use(morgan(process.env.NODE_ENV === "production" ? "combined" : "dev"));
 
 // API Routes
-app.use("/api/auth",   require("./routes/auth"));
-app.use("/api/orders", require("./routes/orders"));
+app.use("/api/auth",     require("./routes/auth"));
+app.use("/api/orders",   require("./routes/orders"));
+app.use("/api/products", require("./routes/products"));
+app.use("/api/admin",    require("./routes/admin"));
 
 // Health Check
 app.get("/api/health", (req, res) => {
